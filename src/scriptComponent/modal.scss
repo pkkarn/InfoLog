@@ -1,0 +1,53 @@
+$primaryColor: #7192fe;
+$secondary-color:#cad5ff;
+$third-color: #CAD5FF;
+
+
+
+.header_node {
+    display: flex!important;
+    align-items: center!important;
+    justify-content: space-between!important;
+    margin-bottom: 35px!important;
+
+    &__options {
+        background-color: $primaryColor!important;
+        padding: 7px!important;
+        border-radius: 10px!important;
+        color: #fff!important;
+
+        &:first-child {
+            margin-right: 15px!important;
+        }
+    }
+}
+
+
+.ant-input-affix-wrapper { 
+    background-color: #eaeeff!important;
+    
+    input, textarea, select{
+        background-color: #eaeeff!important;
+    }
+
+    input {
+        height: 35px;
+    }
+}
+
+.btn-info-log {
+    background-color: $primaryColor!important;
+    color: #fff!important;
+    transition: all 0.2s!important;
+    margin-top: 30px!important;
+    height: 45px;
+
+    &:hover {
+        background-color: #fff!important;
+        color: $primaryColor!important;
+    }
+}
+
+.logo_png {
+    width: 152px;
+}
