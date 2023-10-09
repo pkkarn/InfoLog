@@ -5,6 +5,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { DefinePlugin } = require('webpack');
 require('dotenv').config()
 
+const envVariablesToExpose = Object.keys(process.env)
+  .filter(key => key.startsWith('CHROME_EXTENSION_'))
+  .reduce((env, key) => {
+    env[`process.env.${key}`] = JSON.stringify(process.env[key]);
+    return env;
+  }, {});
+
 
 const filepath = (pathData) => {
     const rootFile = ['background', 'content-script']
@@ -34,8 +41,8 @@ const mapHtmlPlugin = (chunks) => {
 }
 
 module.exports = {
-    mode: process.env.MODE,
-    devtool: process.env.MODE === 'production' ? false : 'cheap-module-source-map',
+    mode: process.env.CHROME_EXTENSION_MODE,
+    devtool: process.env.CHROME_EXTENSION_MODE === 'production' ? false : 'cheap-module-source-map',
     entry:{
         popup: path.resolve('src/popup/popup.tsx'),
         options: path.resolve('src/options/options.tsx'),
@@ -64,9 +71,7 @@ module.exports = {
         }],
     },
     plugins: [
-        new DefinePlugin({
-            'process.env.DISCORD_WEBHOOK': JSON.stringify(process.env.DISCORD_WEBHOOK)
-          }),
+        new DefinePlugin(envVariablesToExpose),
         // It's not directly editing or compliling
         new CopyPlugin({
             patterns: [{

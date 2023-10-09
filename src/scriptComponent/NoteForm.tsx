@@ -34,7 +34,7 @@ export const NoteForm: React.FC<{
 
     const processNote = async () => {
         setIsLoading(true)
-        await DiscordService.postMessage(state, process.env.DISCORD_WEBHOOK)
+        await DiscordService.postMessage(state, process.env.CHROME_EXTENSION_DISCORD_WEBHOOK)
         setIsModalOpen(false)
         setIsLoading(false)
     }

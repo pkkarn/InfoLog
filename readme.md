@@ -13,8 +13,8 @@ Later we would expand it and also add support for wordpress. A user will be be a
 - Update your .env
 
 ```
-MODE="development"
-DISCORD_WEBHOOK="discord_webhook_url"
+CHROME_EXTENSION_MODE="development"
+CHROME_EXTENSION_DISCORD_WEBHOOK="discord_webhook_url"
 ```
 
 - Run `npm install` and `npm run build` command(`dist` folder will be generated)
