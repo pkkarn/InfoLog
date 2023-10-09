@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { DefinePlugin } = require('webpack');
 require('dotenv').config()
 
 
@@ -63,6 +64,9 @@ module.exports = {
         }],
     },
     plugins: [
+        new DefinePlugin({
+            'process.env.DISCORD_WEBHOOK': JSON.stringify(process.env.DISCORD_WEBHOOK)
+          }),
         // It's not directly editing or compliling
         new CopyPlugin({
             patterns: [{

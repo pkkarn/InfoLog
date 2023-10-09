@@ -1,6 +1,6 @@
 # Introduction
 
-![MainScreen](./screenshots/stream_1.png)
+![MainScreen](./screenshots/screenshot.png)
 
 AI Based chrome extension to track and record learning. and also log it inside `discord` and `wordpress` currently webhook url has been stored inside `.env` but later we will change it.
 
@@ -22,6 +22,9 @@ DISCORD_WEBHOOK="discord_webhook_url"
 - Click on `Load Unpacked` and add `dist folder`
 
 - Now go at any webpage and press `Ctrl + K` or `Command + K(mac)`.
+
+![MainScreen](./screenshots/stream_1.png)
+
 - Take a note and it will get saved like this.
 
 ![Discord](./screenshots/discord.png)
